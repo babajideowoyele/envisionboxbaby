@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" data-sphere="baby">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>EnvisionBOX &mdash; Baby sphere</title>
+  <meta name="description" content="Infant recordings carry the strictest protection and the highest value per hour: corpora are small, expensive and hard to replace. They are also where mask"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="design-system.css">
+  <script src="icons.js"></script>
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <header class="topbar" role="banner">
+    <a href="https://envisionbox.org/index.html" class="logo" aria-label="EnvisionBOX home">
+      <img class="logo-mark" src="envisionbox_mark.png" alt="" aria-hidden="true">
+      <span class="logo-word">Envision<strong>BOX</strong></span>
+    </a>
+    <nav class="topbar-nav" aria-label="Site navigation">
+      <a href="https://envisionbox.org/gettingstarted.html">Getting started</a>
+      <a href="https://envisionbox.org/codingmodules.html">Modules</a>
+      <a href="https://envisionbox.org/resources.html">Resources</a>
+      <a href="https://envisionbox.org/events.html">Events</a>
+      <a href="https://envisionbox.org/about.html">About</a>
+      <div class="topbar-divider" aria-hidden="true"></div>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch to dark mode" aria-pressed="false"><svg class="ico ico-sm" aria-hidden="true"><use href="#i-sun"/></svg></button>
+    </nav>
+  </header>
+  <div class="brand-bar" aria-hidden="true"></div>
+
+  <section class="hero">
+    <div class="hero-in">
+      <span class="hero-mark" aria-hidden="true"><svg class="ico ico-xl" aria-hidden="true"><use href="#i-infant"/></svg></span>
+      <p class="eyebrow">EnvisionBOX &middot; Baby sphere</p>
+      <h1>Methods for infant research, and what they cost</h1>
+      <p class="lede">Infant recordings carry the strictest protection and the highest value per hour: corpora are small, expensive and hard to replace. They are also where masking hurts most, because in gaze and affect work the face is not what identifies the child, it is the measurement.</p>
+    </div>
+  </section>
+  <section class="band">
+    <div class="band-in">
+      <h2>Where this sphere stands</h2>
+      <p class="band-lede">Counted from the sphere matrix, not estimated. A method can
+        carry a partial finding and an open question at once, so the two numbers below
+        are not meant to add up to the first.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-n">18</span><span class="stat-l">methods in the matrix</span></div>
+        <div class="stat"><span class="stat-n">1</span><span class="stat-l">with any finding at all</span></div>
+        <div class="stat"><span class="stat-n">18</span><span class="stat-l">open questions</span></div>
+        <div class="stat"><span class="stat-n">0</span><span class="stat-l">backed by a benchmark</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="band band-tint">
+    <div class="band-in">
+      <h2>What the trade is here</h2>
+      <p class="band-lede">The identifying signal and the behavioural signal are the same pixels. What differs between spheres is how far they overlap.</p>
+      <div class="feat-grid">
+        <div class="feat">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-face"/></svg></span>
+          <div class="feat-title">What identifies a subject</div>
+          <p class="feat-desc">Face, and usually the caregiver in frame as well.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <div class="feat-title">What the law requires</div>
+          <p class="feat-desc">GDPR with heightened protection for minors; caregiver consent, often time-limited.</p>
+        </div>
+        <div class="feat">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-privacy"/></svg></span>
+          <div class="feat-title">Why it is hard</div>
+          <p class="feat-desc">The hardest trade in the set. The face is frequently the measurement itself, in gaze and affect work, and infant corpora are small and costly, so the value of being able to reuse them is highest exactly where protection is strictest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="band-in">
+      <h2>What is known so far</h2>
+      <p class="band-lede">Each row carries how it is known. Nothing in this sphere rests on a benchmark yet, so every grade below is weaker than a measurement and is labelled so you can discount it.</p>
+      <div class="qlist">
+        <div class="q">
+          <div class="q-mod">Full-body Tracking with MediaPipe<br><span class="chip chip-judgement">reasoning, unverified</span></div>
+          <div class="q-text"><strong>degraded.</strong> MediaPipe Pose is trained on adult body proportions; infants differ in head-to-body ratio and spend much of a recording prone or occluded, so landmark quality is expected to drop. Needs measuring against a hand-annotated infant set.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="band band-tint">
+    <div class="band-in">
+      <h2>18 open questions</h2>
+      <p class="band-lede">Each one is bounded, attached to a named method, and answerable by one person with the right recordings. This is the work the sphere needs, written out rather than summarised.</p>
+      <div class="qlist">
+        <div class="q">
+          <div class="q-mod">3D Tracking with anipose and DeepLabCut</div>
+          <div class="q-text">Does 3D Tracking with anipose and DeepLabCut work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Audio Analysis with Parselmouth</div>
+          <div class="q-text">Does Audio Analysis with Parselmouth work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Automatic Face Masking for Stimuli</div>
+          <div class="q-text">Does face detection hold on infant faces, and does the pipeline fail closed when it does not?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">CNN Behaviour Classification End-to-End</div>
+          <div class="q-text">Does CNN Behaviour Classification End-to-End work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">EnvisionHG Gesture Detector</div>
+          <div class="q-text">Does EnvisionHG Gesture Detector work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">EnvisionObject Annotator</div>
+          <div class="q-text">Does EnvisionObject Annotator work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Full-body Tracking with MediaPipe</div>
+          <div class="q-text">How far does landmark accuracy fall on infant recordings, and does a fine-tuned model recover it?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Head Rotation Tracking with MediaPipe</div>
+          <div class="q-text">Does Head Rotation Tracking with MediaPipe work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Montreal Forced Aligner</div>
+          <div class="q-text">Does Montreal Forced Aligner work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Multi-Camera Synchronous Recording</div>
+          <div class="q-text">Does Multi-Camera Synchronous Recording work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Multi-Person YOLO Tracking and Social Proximity</div>
+          <div class="q-text">Does Multi-Person YOLO Tracking and Social Proximity work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Multimodal Annotation Tool (R)</div>
+          <div class="q-text">Does Multimodal Annotation Tool (R) work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">OpenPose + Pose2Sim 3D Tracking</div>
+          <div class="q-text">Does OpenPose + Pose2Sim 3D Tracking work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Post-synchronising Video and Audio</div>
+          <div class="q-text">Does Post-synchronising Video and Audio work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Real-Time Gesture Detection from Webcam</div>
+          <div class="q-text">Does Real-Time Gesture Detection from Webcam work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Running OpenPose in Batches</div>
+          <div class="q-text">Does Running OpenPose in Batches work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">SPUDNIG Gesture Annotation</div>
+          <div class="q-text">Does SPUDNIG Gesture Annotation work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+        <div class="q">
+          <div class="q-mod">Video-Embedded Time Series Animations</div>
+          <div class="q-text">Does Video-Embedded Time Series Animations work on infant recordings, and what survives once the subjects are masked?</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="band">
+    <div class="band-in">
+      <h2>Groups a method here must not fail</h2>
+      <p class="band-lede">A result can hold for this sphere and be flatly wrong for a group inside it. These are recorded once and referenced from the matrix, because a signing adult and a signing infant break the same assumption for the same reason.</p>
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="feat-title">Deaf and hard of hearing</div>
+          <p class="feat-desc">In signed languages facial expression is grammar - question marking, negation, topic marking, adverbial modification. Masking the face does not reduce the signal, it removes the language. The hardest point on the frontier in this matrix, and invisible to any measure scoring pose recovery alone.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-title">Blind and low vision</div>
+          <p class="feat-desc">Gaze and mutual-gaze measures assume sighted interaction and can report absent engagement where another modality carries it. Also the learner side: visual-only results and unlabelled figures make a module unreadable.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-title">Motor and dexterity</div>
+          <p class="feat-desc">Wheelchair use, tremor, spasticity, prosthetics and hemiplegia sit outside the movement range pose models were trained on - the same failure infants produce, by a different route.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-title">Speech and language</div>
+          <p class="feat-desc">Atypical or absent speech, including AAC use. Audio-first pipelines measure silence; where an AAC device carries the message its screen is both content and identifier, and no masking tool currently treats it as a target.</p>
+        </div>
+        <div class="feat">
+          <div class="feat-title">Cognitive, learning and neurodivergent</div>
+          <p class="feat-desc">Mainly a Face A concern - dense jargon, silent defaults, long unstructured tutorials - but also Face B wherever a measure assumes a normative interaction style.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div class="cta-in">
+      <h2>Answer one of these</h2>
+      <p>Every open question above is a contribution: run one method on recordings from
+        this sphere, report what survived, and the cell stops being blank. Findings are
+        credited to whoever establishes them.</p>
+      <div class="btn-row">
+        <a href="https://envisionbox.org/gettingstarted.html" class="btn">Get involved</a>
+        <a href="https://envisionbox.org/about.html" class="btn-ghost">About EnvisionBOX</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">EnvisionBOX</span>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="https://envisionbox.org/about.html">About</a>
+        <a href="https://envisionbox.org/events.html">Events</a>
+        <a href="https://envisionbox.org/resources.html">Resources</a>
+      </nav>
+    </div>
+    <div class="footer-inner" style="margin-top:8px">
+      <span class="fc">Baby sphere &middot; envisionboxbaby.org &middot; generated from the sphere matrix, 2026-10-30</span>
+    </div>
+  </footer>
+</body>
+</html>
