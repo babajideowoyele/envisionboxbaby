@@ -39,7 +39,7 @@
   <section class="band" id="what">
     <div class="band-in">
       <h2>What this sphere is</h2>
-      <p class="band-lede">Infant and caregiver interaction from birth to about three years, including the audiovisual characterisation of autism. Consent is given by someone else, often for a fixed time. Corpora are small. And the thing being measured is usually the thing that identifies the child.</p>
+      <p class="band-lede">Infant and caregiver interaction from birth to about three years, including the audiovisual characterisation of autism. The field shares protocols, stimuli and analysis scripts well. It does not share raw recordings, and it has no pinned, tested pipeline anyone can re-run. That second gap is the one this sphere exists for.</p>
     </div>
   </section>
   <section class="band band-tint" id="standing">
@@ -88,7 +88,7 @@
     <div class="band-in">
       <p class="eyebrow">Pathway 1</p>
       <h2><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg> Participation</h2>
-      <p class="band-lede">A caregiver consents, often for a fixed period, and can withdraw. Raw video stays in the lab. What travels is derivatives: skeletons, gaze vectors, vocal features. Masking has to fail closed: when no face is found, the frame is dropped, not shown.</p>
+      <p class="band-lede">Dutch ethics boards treat every recording as personal data, blurred or not. Parents consent for children under 16, children co-consent from 12, and since 1 September 2026 a child of 12 can withdraw the consent a parent gave. Sharing needs its own opt-in. So raw video stays in the lab and derivatives travel. A skeleton is lower-risk, not anonymous: body motion alone identified 55,000 VR users with 94% accuracy.</p>
       <div class="feat-grid">
         <div class="feat">
           <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-face"/></svg></span>
@@ -108,10 +108,17 @@
       </div>
       <h3 class="needs-h">What this pathway needs</h3>
       <ul class="needs">
-        <li>A consent-and-withdrawal record that travels with every derivative</li>
-        <li>A derivative format for infant video, with its loss documented</li>
-        <li>A masking step that fails closed, tested on infant faces</li>
-        <li>Terms on which caregivers can contribute home recordings</li>
+        <li>A consent template that states the sharing term, the withdrawal right at 12, and whether derivatives and model training are covered</li>
+        <li>A masking step that fails closed: when no face is found, the frame is dropped, not shown</li>
+        <li>A derivative format for infant video with its loss documented</li>
+        <li>A compute-to-data pilot: one EnvisionBOX container run inside ODISSEI’s SANE enclave against the YOUth parent–child videos</li>
+      </ul>
+      <h3 class="needs-h">Sources</h3>
+      <ul class="sources">
+        <li><a href="https://fetc-gw.wp.hum.uu.nl/wp-content/uploads/sites/336/2021/11/Guidelines-on-%E2%80%98informed-consent_version-1.1_30Nov2021-1.pdf">Utrecht FEtC-H consent guidelines, 2021</a></li>
+        <li><a href="https://maastrichtuniversity.nl/file/procedure-audio-and-video-recording-research">Maastricht FPN recording procedure, 2024</a></li>
+        <li><a href="https://www.njb.nl/wetgeving/staatsbladen/verzamelwet-gegevensbescherming/">Verzamelwet gegevensbescherming, Stb. 2026, 154</a></li>
+        <li><a href="https://arxiv.org/html/2302.07517v6">Nair et al., motion re-identification of 55,000 VR users</a></li>
       </ul>
     </div>
   </section>
@@ -119,7 +126,7 @@
     <div class="band-in">
       <p class="eyebrow">Pathway 2</p>
       <h2><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Validity</h2>
-      <p class="band-lede">Most of these models were trained on adults. The pose model behind MediaPipe assumes adult proportions; SyRIP and FiDIP exist because it fails on infants. Almost no method in the matrix has been run on an infant recording and reported.</p>
+      <p class="band-lede">Generic adult-trained pose models now beat infant-specific ones. On supine infant video ViTPose scored 88.5 AP, MediaPipe 1.8, DeepLabCut 0.0; on newborn phone videos RTMPose was best. The two infant-specific repositories were last updated in 2024 and 2022. iCatcher+ agrees with human gaze coders on 78–85% of infant frames. Face blur does not change general-movement scores, but the best infant face-swap keeps only 51% of emotion labels. Of the 18 methods in the matrix, one has been run on an infant recording and reported.</p>
       <h3 class="needs-h">Known so far, with how it is known</h3>
       <div class="qlist">
         <div class="q">
@@ -204,9 +211,18 @@
       </div>
       <h3 class="needs-h">What this pathway needs</h3>
       <ul class="needs">
-        <li>Run each method on an annotated infant set and record what survives</li>
-        <li>Adopt the infant-trained models where they exist and compare</li>
+        <li>A pose benchmark on infants following the Gama recipe: crop to the infant, rotate head-up, report AP, on SyRIP and MINI-RGBD</li>
+        <li>Run each listed method on an annotated infant set and record what survives, with how it is known</li>
+        <li>Report class-wise reliability where it is weak: the voice-type classifier reaches F1 51% on “other child”</li>
         <li>State the body assumptions each method makes</li>
+      </ul>
+      <h3 class="needs-h">Sources</h3>
+      <ul class="sources">
+        <li><a href="https://arxiv.org/html/2406.17382v4">Gama et al., Behavior Research Methods 2025</a></li>
+        <li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10471135">iCatcher+, independent evaluation</a></li>
+        <li><a href="https://arxiv.org/abs/2207.11020">Marschik et al., blur and general-movement assessment</a></li>
+        <li><a href="https://arxiv.org/html/2512.15542">BLANKET, infant face replacement</a></li>
+        <li><a href="https://raw.githubusercontent.com/LAAC-LSCP/VTC/main/README.md">Voice-type classifier, VTC 2.2</a></li>
       </ul>
     </div>
   </section>
@@ -214,7 +230,7 @@
     <div class="band-in">
       <p class="eyebrow">Pathway 3</p>
       <h2><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg> Reproducibility</h2>
-      <p class="band-lede">ManyBabies reproduces at the protocol level across dozens of labs. Nobody does it at the pipeline level: no module here pins its dependencies, and no infancy pipeline ships sample data someone else can run.</p>
+      <p class="band-lede">ManyBabies shares every stimulus and script — its first study ran in 69 labs across 16 countries with 2,845 infants — but states it cannot run “born open”. At pipeline level one infant benchmark ships containers and one audio stack has a lockfile. No reproducibility audit of infant tools exists. No module on this platform pins its dependencies yet.</p>
       <div class="stat-row">
         <div class="stat"><span class="stat-n">0</span><span class="stat-l">modules with a pinned environment</span></div>
         <div class="stat"><span class="stat-n">0</span><span class="stat-l">modules with a smoke test</span></div>
@@ -224,8 +240,15 @@
       <h3 class="needs-h">What this pathway needs</h3>
       <ul class="needs">
         <li>A pinned environment and a smoke test for every module</li>
-        <li>Synthetic or consented sample recordings</li>
-        <li>Claim-to-code audits of infancy methods papers</li>
+        <li>Count how many infancy papers share derivatives but withhold video: nobody has, and it carries no privacy burden</li>
+        <li>Claim-to-code audits of infancy methods papers in Behavior Research Methods, submitted to Open Science NL’s replication instrument as a reproduction</li>
+        <li>Weekly headless execution of every module</li>
+      </ul>
+      <h3 class="needs-h">Sources</h3>
+      <ul class="sources">
+        <li><a href="https://eprints.whiterose.ac.uk/157387/1/Byers-HeinleinEtAl-Lessons_Learned_From_ManyBabies1.pdf">Byers-Heinlein et al., lessons from ManyBabies 1</a></li>
+        <li><a href="https://childproject.readthedocs.io/en/latest/vandam.html">ChildProject, DataLad-based audio pipeline</a></li>
+        <li><a href="https://doi.org/10.58875/BAOC1480">de Bruïne, Hillebrink, de Man: how funders can support replication, 2026</a></li>
       </ul>
     </div>
   </section>
@@ -233,7 +256,7 @@
     <div class="band-in">
       <p class="eyebrow">Pathway 4</p>
       <h2><svg class="ico" aria-hidden="true"><use href="#i-group"/></svg> Accessibility</h2>
-      <p class="band-lede">Databrary and ManyBabies are the communities. The methods are scattered across OSF, GitHub and lab web-books. A method here must also hold for the families a lab is least likely to have tested it on.</p>
+      <p class="band-lede">The communities exist. Databrary has 915 partner institutions, though only 5–45% of its investigators have ever shared a volume. HomeBank keeps 17 of 22 corpora restricted. Runnable infant-method notebooks do not exist anywhere. No tool has been validated with deaf and signing families, blind caregivers or non-speaking children.</p>
       <h3 class="needs-h">Groups a method here must not fail</h3>
       <div class="feat-grid">
         <div class="feat">
@@ -259,9 +282,15 @@
       </div>
       <h3 class="needs-h">What this pathway needs</h3>
       <ul class="needs">
-        <li>Alt text and captions on every figure and video</li>
+        <li>First modules: iCatcher+ gaze on a public Lookit video; ChildProject + VTC + ALICE daylong audio on the VanDam clip; the pose benchmark; fail-closed masking; ELAN/Datavyu/BORIS interoperability</li>
         <li>Methods that run on a laptop, without a GPU</li>
+        <li>Alt text and captions on every figure and video</li>
         <li>Modules checked with the groups listed below</li>
+      </ul>
+      <h3 class="needs-h">Sources</h3>
+      <ul class="sources">
+        <li><a href="https://databrary.github.io/analytics/institutions.html">Databrary analytics</a></li>
+        <li><a href="https://talkbank.org/homebank/access">HomeBank access tiers</a></li>
       </ul>
     </div>
   </section>
