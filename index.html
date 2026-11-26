@@ -31,13 +31,18 @@
 
   <section class="hero">
     <div class="hero-in">
-      
       <p class="eyebrow"><svg class="ico" aria-hidden="true"><use href="#i-infant"/></svg> Baby sphere</p>
       <h1>Methods for infant research, and what they cost</h1>
       <p class="lede">Infant recordings carry the strictest protection and the highest value per hour: corpora are small, expensive and hard to replace. They are also where masking hurts most, because in gaze and affect work the face is not what identifies the child, it is the measurement.</p>
     </div>
   </section>
-  <section class="band">
+  <section class="band" id="what">
+    <div class="band-in">
+      <h2>What this sphere is</h2>
+      <p class="band-lede">Infant and caregiver interaction from birth to about three years, including the audiovisual characterisation of autism. Consent is given by someone else, often for a fixed time. Corpora are small. And the thing being measured is usually the thing that identifies the child.</p>
+    </div>
+  </section>
+  <section class="band band-tint" id="standing">
     <div class="band-in">
       <h2>Where this sphere stands</h2>
       <p class="band-lede">Counted from the sphere matrix, not estimated. A method can
@@ -51,10 +56,39 @@
       </div>
     </div>
   </section>
-  <section class="band band-tint">
+  <section class="band" id="pathways">
     <div class="band-in">
-      <h2>What the trade is here</h2>
-      <p class="band-lede">The identifying signal and the behavioural signal are the same pixels. What differs between spheres is how far they overlap.</p>
+      <h2>Four pathways</h2>
+      <p class="band-lede">Every sphere is built along the same four. Protection is assumed under all of them: masking, consent and data governance are the condition for a method to be listed, not a feature of the sphere.</p>
+      <div class="feat-grid path-grid">
+        <a class="feat" href="#participation">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-people"/></svg></span>
+          <div class="feat-title">Participation</div>
+          <p class="feat-desc">On what terms do people take part?</p>
+        </a>
+        <a class="feat" href="#validity">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <div class="feat-title">Validity</div>
+          <p class="feat-desc">Does the method measure what it claims, on this population?</p>
+        </a>
+        <a class="feat" href="#reproducibility">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-loop"/></svg></span>
+          <div class="feat-title">Reproducibility</div>
+          <p class="feat-desc">Can someone else get the same result from the same inputs?</p>
+        </a>
+        <a class="feat" href="#accessibility">
+          <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-group"/></svg></span>
+          <div class="feat-title">Accessibility</div>
+          <p class="feat-desc">Who can use it, who can contribute, who is left out?</p>
+        </a>
+      </div>
+    </div>
+  </section>
+  <section class="band band-tint" id="participation">
+    <div class="band-in">
+      <p class="eyebrow">Pathway 1</p>
+      <h2><svg class="ico" aria-hidden="true"><use href="#i-people"/></svg> Participation</h2>
+      <p class="band-lede">A caregiver consents, often for a fixed period, and can withdraw. Raw video stays in the lab. What travels is derivatives: skeletons, gaze vectors, vocal features. Masking has to fail closed: when no face is found, the frame is dropped, not shown.</p>
       <div class="feat-grid">
         <div class="feat">
           <span class="feat-icon" aria-hidden="true"><svg class="ico ico-lg" aria-hidden="true"><use href="#i-face"/></svg></span>
@@ -72,24 +106,28 @@
           <p class="feat-desc">The hardest trade in the set. The face is frequently the measurement itself, in gaze and affect work, and infant corpora are small and costly, so the value of being able to reuse them is highest exactly where protection is strictest.</p>
         </div>
       </div>
+      <h3 class="needs-h">What this pathway needs</h3>
+      <ul class="needs">
+        <li>A consent-and-withdrawal record that travels with every derivative</li>
+        <li>A derivative format for infant video, with its loss documented</li>
+        <li>A masking step that fails closed, tested on infant faces</li>
+        <li>Terms on which caregivers can contribute home recordings</li>
+      </ul>
     </div>
   </section>
-  <section class="band">
+  <section class="band" id="validity">
     <div class="band-in">
-      <h2>What is known so far</h2>
-      <p class="band-lede">Each row carries how it is known. Nothing in this sphere rests on a benchmark yet, so every grade below is weaker than a measurement and is labelled so you can discount it.</p>
+      <p class="eyebrow">Pathway 2</p>
+      <h2><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg> Validity</h2>
+      <p class="band-lede">Most of these models were trained on adults. The pose model behind MediaPipe assumes adult proportions; SyRIP and FiDIP exist because it fails on infants. Almost no method in the matrix has been run on an infant recording and reported.</p>
+      <h3 class="needs-h">Known so far, with how it is known</h3>
       <div class="qlist">
         <div class="q">
           <div class="q-mod">Full-body Tracking with MediaPipe<br><span class="chip chip-judgement">reasoning, unverified</span></div>
           <div class="q-text"><strong>degraded.</strong> MediaPipe Pose is trained on adult body proportions; infants differ in head-to-body ratio and spend much of a recording prone or occluded, so landmark quality is expected to drop. Needs measuring against a hand-annotated infant set.</div>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="band band-tint">
-    <div class="band-in">
-      <h2>18 open questions</h2>
-      <p class="band-lede">Each one is bounded, attached to a named method, and answerable by one person with the right recordings. This is the work the sphere needs, written out rather than summarised.</p>
+      <h3 class="needs-h">18 open questions, one per method</h3>
       <div class="qlist">
         <div class="q">
           <div class="q-mod">3D Tracking with anipose and DeepLabCut</div>
@@ -164,12 +202,39 @@
           <div class="q-text">Does Video-Embedded Time Series Animations work on infant recordings, and what survives once the subjects are masked?</div>
         </div>
       </div>
+      <h3 class="needs-h">What this pathway needs</h3>
+      <ul class="needs">
+        <li>Run each method on an annotated infant set and record what survives</li>
+        <li>Adopt the infant-trained models where they exist and compare</li>
+        <li>State the body assumptions each method makes</li>
+      </ul>
     </div>
   </section>
-  <section class="band">
+  <section class="band band-tint" id="reproducibility">
     <div class="band-in">
-      <h2>Groups a method here must not fail</h2>
-      <p class="band-lede">A result can hold for this sphere and be flatly wrong for a group inside it. These are recorded once and referenced from the matrix, because a signing adult and a signing infant break the same assumption for the same reason.</p>
+      <p class="eyebrow">Pathway 3</p>
+      <h2><svg class="ico" aria-hidden="true"><use href="#i-loop"/></svg> Reproducibility</h2>
+      <p class="band-lede">ManyBabies reproduces at the protocol level across dozens of labs. Nobody does it at the pipeline level: no module here pins its dependencies, and no infancy pipeline ships sample data someone else can run.</p>
+      <div class="stat-row">
+        <div class="stat"><span class="stat-n">0</span><span class="stat-l">modules with a pinned environment</span></div>
+        <div class="stat"><span class="stat-n">0</span><span class="stat-l">modules with a smoke test</span></div>
+        <div class="stat"><span class="stat-n">0</span><span class="stat-l">findings backed by a benchmark</span></div>
+        <div class="stat"><span class="stat-n">0</span><span class="stat-l">papers audited claim-to-code</span></div>
+      </div>
+      <h3 class="needs-h">What this pathway needs</h3>
+      <ul class="needs">
+        <li>A pinned environment and a smoke test for every module</li>
+        <li>Synthetic or consented sample recordings</li>
+        <li>Claim-to-code audits of infancy methods papers</li>
+      </ul>
+    </div>
+  </section>
+  <section class="band" id="accessibility">
+    <div class="band-in">
+      <p class="eyebrow">Pathway 4</p>
+      <h2><svg class="ico" aria-hidden="true"><use href="#i-group"/></svg> Accessibility</h2>
+      <p class="band-lede">Databrary and ManyBabies are the communities. The methods are scattered across OSF, GitHub and lab web-books. A method here must also hold for the families a lab is least likely to have tested it on.</p>
+      <h3 class="needs-h">Groups a method here must not fail</h3>
       <div class="feat-grid">
         <div class="feat">
           <div class="feat-title">Deaf and hard of hearing</div>
@@ -192,14 +257,20 @@
           <p class="feat-desc">Mainly a Face A concern - dense jargon, silent defaults, long unstructured tutorials - but also Face B wherever a measure assumes a normative interaction style.</p>
         </div>
       </div>
+      <h3 class="needs-h">What this pathway needs</h3>
+      <ul class="needs">
+        <li>Alt text and captions on every figure and video</li>
+        <li>Methods that run on a laptop, without a GPU</li>
+        <li>Modules checked with the groups listed below</li>
+      </ul>
     </div>
   </section>
   <section class="cta">
     <div class="cta-in">
-      <h2>Answer one of these</h2>
-      <p>Every open question above is a contribution: run one method on recordings from
-        this sphere, report what survived, and the cell stops being blank. Findings are
-        credited to whoever establishes them.</p>
+      <h2>Pick a pathway</h2>
+      <p>Each item under a pathway is a contribution someone can make. Run one method on
+        recordings from this sphere, report what survived, and the cell stops being
+        blank. Findings are credited to whoever establishes them.</p>
       <div class="btn-row">
         <a href="https://envisionbox.org/about.html" class="btn">Get involved</a>
         <a href="https://envisionbox.org/about.html" class="btn-ghost">About EnvisionBOX</a>
